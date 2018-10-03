@@ -1,0 +1,24 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "Test some stuff things",
+  "main": "index.html",
+  "scripts": {
+    "start": "npm run lite",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lite": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/vinhdoanthe/reactjs.git"
+  },
+  "author": "Vinh Doan-The",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vinhdoanthe/reactjs/issues"
+  },
+  "homepage": "https://github.com/vinhdoanthe/reactjs#readme",
+  "devDependencies": {
+    "lite-server": "^2.4.0"
+  }
+}
