@@ -6,21 +6,33 @@ class DishDetail extends Component {
 
         super(props);
         this.state = {
-
+            
         }
     }
 
     renderComments(dish) {
-
+        const header = (
+            <h4 header>Comments</h4>
+        )
+        const options = {year: 'numeric', month: 'long', day: 'numeric'};
+       
         const comments = dish.comments.map((comment) => {
             return (
-                <div key={comment.id} className="list-unstyled">
-                    <div>{comment.comment}</div>
-                    <div>{comment.author}</div>
-                </div>
+                <li key={comment.id}>
+                    <p>{comment.comment}</p>
+                    <p>-- {comment.author}, {(new Date(comment.date)).toLocaleDateString('en-US', options)}</p>
+                </li>
             );
         });
-        return comments;
+        return (
+            <div>
+                {header}
+                <ul className="list-unstyled">
+                    {comments}
+                </ul>
+            </div>
+        );
+
     }
 
     render() {
