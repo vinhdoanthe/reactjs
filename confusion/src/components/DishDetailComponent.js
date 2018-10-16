@@ -1,11 +1,13 @@
 import React from 'react';
 import { Card, CardImg, CardBody, CardText, CardTitle, Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import { Link } from 'react-router-dom'
+import CommentForm from './CommentForm'
 
 function RenderComments({ comments }) {
     const header = (
         <h4 header="true">Comments</h4>
     )
+
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
 
     const commentLis = comments.map((comment) => {
@@ -22,6 +24,7 @@ function RenderComments({ comments }) {
             <ul className="list-unstyled">
                 {commentLis}
             </ul>
+            <CommentForm />
         </div>
     );
 
