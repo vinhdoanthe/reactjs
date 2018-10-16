@@ -7,8 +7,8 @@ function About(props) {
 
     const leaders = props.leaders.map((leader) => {
         return (
-            <div className="row m-1">
-                <RenderLeader key={leader.id} leader={leader} />
+            <div key={leader.id} className="row m-1">
+                <RenderLeader leader={leader} />
             </div>
         );
     });
