@@ -3,16 +3,16 @@ import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle } from 'reac
 import { Loading } from './LoadingComponent'
 import { baseUrl } from '../shared/baseUrl';
 
-function RenderCard({ item, isLoading, errorMess }) {
+function RenderCard({ item, isLoading, errMess }) {
     if (isLoading) {
         return (
             <Loading />
         );
-    } else if (errorMess) {
+    } else if (errMess) {
         return (
-            <h4>{errorMess}</h4>
+            <h4>{errMess}</h4>
         );
-    } else
+    } else {
         return (
             <Card>
                 <CardImg src={baseUrl + item.image} alt={item.name} />
@@ -23,6 +23,8 @@ function RenderCard({ item, isLoading, errorMess }) {
                 </CardBody>
             </Card>
         );
+
+    }
 }
 
 function Home(props) {
@@ -32,13 +34,13 @@ function Home(props) {
                 <div className="col-12 col-md m-1">
                     <RenderCard item={props.dish}
                         isLoading={props.dishesLoading}
-                        errorMess={props.dishesErrMess}
+                        errMess={props.dishesErrMess}
                     />
                 </div>
                 <div className="col-12 col-md m-1">
-                    <RenderCard item={props.promotion} 
-                    isLoading={props.promosLoading}
-                    errMess={props.promosErrMess} 
+                    <RenderCard item={props.promotion}
+                        isLoading={props.promosLoading}
+                        errMess={props.promosErrMess}
                     />
                 </div>
                 <div className="col-12 col-md m-1">
