@@ -28,7 +28,8 @@ class CommentForm extends Component {
 
     handleSubmitComment(values) {
        this.toggleForm();
-       this.props.addComment(this.props.dishId, values.rating, values.name, values.comment);
+       console.log(this.props.dishId, values.rating, values.name, values.comment);
+       this.props.postComment(this.props.dishId, values.rating, values.name, values.comment);
     }
 
     render() {
@@ -48,7 +49,7 @@ class CommentForm extends Component {
                                         className="form-control" defaultValue="3">
                                         <option>1</option>
                                         <option>2</option>
-                                        <option selected>3</option>
+                                        <option defaultValue>3</option>
                                         <option>4</option>
                                         <option>5</option>
                                         <option>6</option>
