@@ -1,14 +1,15 @@
-import React from 'react'
-import { Media } from 'reactstrap'
+import React from 'react';
+import { Media } from 'reactstrap';
+import { baseUrl } from '../shared/baseUrl'; 
 
-function RenderLeader(props) {
+function RenderLeader({leader}) {
     return (
         <Media>
-            <img className="align-self-start mr-3" src={props.leader.image} alt={props.leader.name}></img>
+            <img className="align-self-start mr-3" src={baseUrl + leader.image} alt={leader.name}></img>
             <Media body>
-                <h4 className="mt-0">{props.leader.name}</h4>
-                <p>{props.leader.designation}</p>
-                <p>{props.leader.description}</p>
+                <h4 className="mt-0">{leader.name}</h4>
+                <p>{leader.designation}</p>
+                <p>{leader.description}</p>
             </Media>
         </Media>
     );
